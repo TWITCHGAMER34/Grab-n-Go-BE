@@ -10,6 +10,7 @@ app.use(express.json());
 
 // mount menu routes (uses the same knex instance)
 app.use('/menu', require('./routes/menu')(knex));
+app.use('/orders', require('./routes/orders')(knex));
 
 async function startServer() {
     try {
