@@ -11,6 +11,7 @@ app.use(express.json());
 // mount menu routes
 app.use('/menu', require('./routes/menu')(knex));
 app.use('/orders', require('./routes/orders')(knex));
+app.use('/orders/:id', require('./routes/orders')(knex));
 
 const port = process.env.PORT || 3000;
 app.listen(port, () => {
